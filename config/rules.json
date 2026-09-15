@@ -1,0 +1,42 @@
+{
+  "id": "default-floor",
+  "description": "The Floor: cheap, deterministic checks that run before any scoring judgment is needed. Demo rule set — generic, not tied to any real product or company.",
+  "maxAttempts": 3,
+  "rules": [
+    {
+      "id": "banned-phrases",
+      "type": "banned-phrases",
+      "rung": "hold",
+      "description": "Rejects generic high-pressure spam phrasing outright.",
+      "phrases": [
+        "act now",
+        "guaranteed results",
+        "limited time offer",
+        "risk-free",
+        "once in a lifetime"
+      ]
+    },
+    {
+      "id": "one-ask-only",
+      "type": "max-asks",
+      "rung": "flag",
+      "description": "A message should make one ask, not stack several questions on the reader.",
+      "max": 1
+    },
+    {
+      "id": "stale-reference-date",
+      "type": "stale-reference-date",
+      "rung": "flag",
+      "description": "Flags a message that references a date too old to still read as timely.",
+      "field": "referenceDate",
+      "maxAgeDays": 30
+    },
+    {
+      "id": "required-fields",
+      "type": "required-fields",
+      "rung": "hold",
+      "description": "A message with no addressed recipient or subject is not ready to be scored as real outreach.",
+      "fields": ["recipient", "subject"]
+    }
+  ]
+}

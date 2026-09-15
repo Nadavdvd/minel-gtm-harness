@@ -1,0 +1,71 @@
+<svg width="960" height="520" viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Minel architecture: Floor feeds the Latch, the Latch gates into the Tether, the Tether reads and writes the Manifest, both the Latch and the Tether append to the Trail, and the Cutoff can halt both at once">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b98a5"/>
+    </marker>
+    <marker id="arrowPass" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3fb950"/>
+    </marker>
+    <marker id="arrowFail" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f85149"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="520" fill="#0d1117"/>
+
+  <!-- Floor -->
+  <rect x="24" y="180" width="120" height="60" rx="10" fill="#151b23" stroke="#5a6472" stroke-width="1.5"/>
+  <text x="84" y="205" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f0f3f7">The Floor</text>
+  <text x="84" y="222" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#8b98a5">deterministic checks</text>
+
+  <!-- Latch -->
+  <rect x="200" y="150" width="160" height="120" rx="12" fill="#1c2530" stroke="#f0b429" stroke-width="2"/>
+  <text x="280" y="205" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#f0f3f7">The Latch</text>
+  <text x="280" y="226" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#8b98a5">scores + verdicts</text>
+  <text x="280" y="242" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#8b98a5">PASS · HOLD · FAIL</text>
+
+  <line x1="144" y1="210" x2="196" y2="210" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Tether -->
+  <rect x="440" y="150" width="160" height="120" rx="12" fill="#1c2530" stroke="#f0b429" stroke-width="2"/>
+  <text x="520" y="205" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#f0f3f7">The Tether</text>
+  <text x="520" y="226" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#8b98a5">cadence + next-due</text>
+  <text x="520" y="242" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#8b98a5">advances the sequence</text>
+
+  <!-- PASS arrow Latch -> Tether -->
+  <line x1="360" y1="200" x2="436" y2="200" stroke="#3fb950" stroke-width="2" marker-end="url(#arrowPass)"/>
+  <text x="398" y="190" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#3fb950">PASS</text>
+
+  <!-- FAIL/HOLD arrow Latch -> down to Trail -->
+  <line x1="280" y1="270" x2="280" y2="400" stroke="#f85149" stroke-width="2" marker-end="url(#arrowFail)"/>
+  <text x="296" y="340" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#f85149">HOLD / FAIL</text>
+
+  <!-- Manifest -->
+  <g transform="translate(700,165)">
+    <path d="M0,10 a70,10 0 1 1 140,0 v70 a70,10 0 1 1 -140,0 z" fill="#151b23" stroke="#5a6472" stroke-width="1.5"/>
+    <ellipse cx="70" cy="10" rx="70" ry="10" fill="#1c2530" stroke="#5a6472" stroke-width="1.5"/>
+    <text x="70" y="55" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f0f3f7">The Manifest</text>
+    <text x="70" y="72" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#8b98a5">per-contact state</text>
+  </g>
+  <line x1="600" y1="200" x2="696" y2="200" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="696" y1="225" x2="600" y2="225" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="648" y="192" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#8b98a5">read / write</text>
+
+  <!-- Trail -->
+  <rect x="200" y="400" width="400" height="70" rx="10" fill="#151b23" stroke="#5a6472" stroke-width="1.5"/>
+  <text x="400" y="430" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#f0f3f7">The Trail</text>
+  <text x="400" y="450" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#8b98a5">append-only log · every verdict, every advance</text>
+
+  <!-- Tether -> Trail -->
+  <line x1="520" y1="270" x2="520" y2="340" stroke="#8b98a5" stroke-width="1.5"/>
+  <line x1="520" y1="340" x2="440" y2="340" stroke="#8b98a5" stroke-width="1.5"/>
+  <line x1="440" y1="340" x2="440" y2="396" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Cutoff -->
+  <rect x="330" y="40" width="300" height="56" rx="10" fill="#2a1416" stroke="#f85149" stroke-width="2"/>
+  <text x="480" y="65" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f85149">The Cutoff</text>
+  <text x="480" y="82" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#d29a99">one flag halts every Latch verdict + every Tether advance</text>
+
+  <line x1="330" y1="96" x2="280" y2="146" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="630" y1="96" x2="520" y2="146" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4 4"/>
+</svg>

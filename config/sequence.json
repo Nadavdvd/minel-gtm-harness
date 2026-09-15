@@ -1,0 +1,9 @@
+{
+  "id": "default-sequence",
+  "description": "A generic three-touch outreach cadence: connect, then a message, then a follow-up. Demo sequence — swap this file for your own cadence.",
+  "steps": [
+    { "name": "connect", "rung": "clear", "waitDaysAfter": 3, "description": "Send the initial connection request." },
+    { "name": "message", "rung": "flag", "waitDaysAfter": 4, "description": "Send the first real message once connected." },
+    { "name": "follow-up", "rung": "hold", "waitDaysAfter": 0, "description": "A follow-up always needs a human's yes before it ships." }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "minel-gtm-harness",
+  "version": "1.0.0",
+  "description": "A demonstration GTM outreach harness: a scoring gate (the Latch), a touch sequencer (the Tether), an append-only audit log (the Trail), and a global kill switch (the Cutoff). Deterministic, zero dependencies, no live send.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "minel": "bin/minel.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "demo": "node bin/minel.js demo"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

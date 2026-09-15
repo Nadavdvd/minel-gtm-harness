@@ -1,0 +1,12 @@
+{
+  "description": "Entirely fictional demo data. No real company, contact, or organization is represented here.",
+  "contacts": [
+    {
+      "contactId": "jordan-vale-bramblewood",
+      "name": "Jordan Vale",
+      "title": "Head of Growth",
+      "company": "Bramblewood Supply Co.",
+      "sequenceId": "default-sequence"
+    }
+  ]
+}

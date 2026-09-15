@@ -1,5 +1,7 @@
 # Minel GTM Harness
 
+![Minel GTM Harness](assets/hero-banner.png)
+
 A small, deterministic reference implementation of the core mechanic behind any serious outbound GTM system: a scoring gate a message must click through before it ships, and a sequencer that tracks where a contact sits in a cadence over time — plus the two things most demo repos skip: a real audit trail and a real kill switch.
 
 No LLM calls. No live send capability of any kind. No API keys. Clone it and run it.
